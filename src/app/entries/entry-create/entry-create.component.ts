@@ -7,9 +7,10 @@ import { Component } from '@angular/core';
 
 export class EntryCreateComponent {
 
+  entryInput = '';
   newEntry = '';
 
   onAddEntry() {
-    this.newEntry = 'New entry';
+    this.newEntry = this.entryInput;
   }
 }
