@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
 })
 
 export class EntryCreateComponent {
+
+  newEntry = '';
+
   onAddEntry() {
-    alert('Entry added');
+    this.newEntry = 'New entry';
   }
 }
