@@ -1,3 +1,6 @@
-<textarea rows=10 [(ngModel)]="entryInput"></textarea>
-<button (click)="onAddEntry()">Add entry</button>
+<textarea rows=10 [(ngModel)]="entryInput" class="input-area"></textarea>
+<br>
+<button (click)="onAddEntry()" class="button input-button">Add entry</button>
+<button class="button reset-button">Reset</button>
+<hr class="horizontal-line">
 <p>{{ newEntry }}</p>
