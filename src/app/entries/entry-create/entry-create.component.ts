@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component ({
   selector: 'app-entry-create',
@@ -8,10 +8,16 @@ import { Component } from '@angular/core';
 
 export class EntryCreateComponent {
 
+  entryTitle = '';
   entryInput = '';
-  newEntry = '';
+  @Output()
+  entryAdded = new EventEmitter();
 
   onAddEntry() {
-    this.newEntry = this.entryInput;
+    const entryData = {
+      title: this.entryTitle,
+      content: this.entryInput};
+
+    this.entryAdded.emit(entryData);
   }
 }

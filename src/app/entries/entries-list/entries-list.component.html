@@ -1,0 +1,12 @@
+<div *ngIf="entriesList.length > 0">
+  <div *ngFor="let entry of entriesList">
+      <header>
+        {{ entry.title }}
+      </header>
+      <p>
+        {{ entry.content }}
+      </p>
+    </div>
+</div>
+<p *ngIf="entriesList.length <= 0">No entries yet</p>
+
