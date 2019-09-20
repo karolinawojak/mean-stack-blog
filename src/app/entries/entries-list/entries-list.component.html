@@ -1,12 +1,16 @@
-<div *ngIf="entriesList.length > 0">
-  <div *ngFor="let entry of entriesList">
-      <header>
+<div class="main-container">
+  <div *ngIf="entriesList.length > 0">
+    <article *ngFor="let entry of entriesList">
+      <header class="main-info">
         {{ entry.title }}
       </header>
-      <p>
+      <p class="content-info">
         {{ entry.content }}
       </p>
-    </div>
+      <hr *ngIf="entriesList.indexOf(entry) != entriesList.length - 1" class="horizontal-line">
+    </article>
+  </div>
+  <p *ngIf="entriesList.length <= 0" class="main-info">No entries yet</p>
 </div>
-<p *ngIf="entriesList.length <= 0">No entries yet</p>
+
 

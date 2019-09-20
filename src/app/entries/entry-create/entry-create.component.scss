@@ -5,6 +5,19 @@ $tertiary-color: #f1f0cf;
 $additional-color: #eb613b;
 $secondary-font-family: 'Abel';
 
+.title-area {
+  box-sizing: border-box;
+  width: 500px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid $secondary-color;
+  outline: none;
+
+  &:focus {
+    border-color: $primary-color;
+  }
+}
+
 .input-area {
   box-sizing: border-box;
   width: 500px;

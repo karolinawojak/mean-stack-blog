@@ -1,0 +1,26 @@
+/**global variables**/
+$primary-color: #4baea0;
+$secondary-color: #b6e6bd;
+
+.main-container {
+  width: 500px;
+  margin: 0 auto 50px auto;
+}
+
+.main-info {
+  font-family: 'Abel';
+  font-size: 22px;
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.content-info {
+  font-family: 'Arial-narrow';
+  margin-bottom: 20px;
+}
+
+.horizontal-line {
+  border: none;
+  border-bottom: 2px dashed $secondary-color;
+}
+
