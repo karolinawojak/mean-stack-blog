@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Entry } from '../entry.model';
 
 @Component ({
@@ -9,15 +10,19 @@ import { Entry } from '../entry.model';
 
 export class EntryCreateComponent {
 
-  entryTitle = '';
-  entryInput = '';
   @Output()
   entryAdded = new EventEmitter();
 
-  onAddEntry() {
+  onAddEntry(form: NgForm) {
+
+    if (form.invalid) {
+      return;
+    }
+
     const entryData: Entry = {
-      title: this.entryTitle,
-      content: this.entryInput};
+      title: form.value.title,
+      content: form.value.content
+    };
 
     this.entryAdded.emit(entryData);
   }
