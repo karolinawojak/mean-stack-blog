@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Entry } from '../entry.model';
 
 @Component ({
   selector: 'app-entries-list',
@@ -8,5 +9,5 @@ import { Component, Input } from '@angular/core';
 
 export class EntriesListComponent {
   @Input()
-  entriesList = [];
+  entriesList: Entry[] = [];
 }

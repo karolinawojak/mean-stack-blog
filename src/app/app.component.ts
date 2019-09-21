@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Entry } from './entries/entry.model';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  entries = [];
+  entries: Entry[] = [];
 
   onEntryAdded(entryData) {
     this.entries.push(entryData);
