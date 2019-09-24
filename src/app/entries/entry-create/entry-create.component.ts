@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Entry } from '../entry.model';
+import { EntryService } from '../entry.service';
 
 @Component ({
   selector: 'app-entry-create',
@@ -10,8 +10,9 @@ import { Entry } from '../entry.model';
 
 export class EntryCreateComponent {
 
-  @Output()
   entryAdded = new EventEmitter();
+
+  constructor(public entryService: EntryService) {}
 
   onAddEntry(form: NgForm) {
 
@@ -19,11 +20,6 @@ export class EntryCreateComponent {
       return;
     }
 
-    const entryData: Entry = {
-      title: form.value.title,
-      content: form.value.content
-    };
-
-    this.entryAdded.emit(entryData);
+    this.entryService.addEntry(form.value.title, form.value.content);
   }
 }
