@@ -19,5 +19,6 @@ export class EntryCreateComponent {
     }
 
     this.entryService.addEntry(form.value.title, form.value.content);
+    form.reset();
   }
 }
