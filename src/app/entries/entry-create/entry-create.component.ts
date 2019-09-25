@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { EntryService } from '../entry.service';
 
@@ -9,8 +9,6 @@ import { EntryService } from '../entry.service';
 })
 
 export class EntryCreateComponent {
-
-  entryAdded = new EventEmitter();
 
   constructor(public entryService: EntryService) {}
 

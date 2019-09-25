@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Entry } from '../entry.model';
 import { EntryService } from '../entry.service';
 
@@ -8,12 +8,13 @@ import { EntryService } from '../entry.service';
   styleUrls: ['./entries-list.component.scss']
 })
 
-export class EntriesListComponent {
-  @Input()
+export class EntriesListComponent implements OnInit {
   entriesList: Entry[] = [];
 
   // public instead of creating a property to store an incoming value in
-  constructor(public entryService: EntryService) {
+  constructor(public entryService: EntryService) {}
 
+  ngOnInit() {
+    this.entriesList = this.entryService.getEntries();
   }
 }
