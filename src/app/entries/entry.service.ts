@@ -1,15 +1,20 @@
 import { Entry } from './entry.model';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({providedIn: 'root'})
 export class EntryService {
   private entries: Entry[] = [];
   private entriesUpdate = new Subject<Entry[]>();
 
+  constructor(private httpClient: HttpClient) {}
+
   getEntries() {
-    // a copy of entries array
-    return [...this.entries];
+    this.httpClient.get<{message: string, entries: Entry[]}>('http://localhost:3000/api/posts')
+      .subscribe(() => {
+
+      });
   }
 
   getEntriesListener() {
