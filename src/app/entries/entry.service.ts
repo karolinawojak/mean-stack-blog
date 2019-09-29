@@ -23,7 +23,7 @@ export class EntryService {
 
   addEntry(title: string, content: string) {
     // property shorthand instead of {title: title, content: content} - ES6
-    const entry: Entry = {title, content};
+    const entry: Entry = {id: null, title, content};
     this.entries.push(entry);
     this.entriesUpdate.next([...this.entries]);
 
