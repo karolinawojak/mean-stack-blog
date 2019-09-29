@@ -17,7 +17,7 @@ export class EntriesListComponent implements OnInit, OnDestroy {
   constructor(public entryService: EntryService) {}
 
   ngOnInit() {
-    this.entriesList = this.entryService.getEntries();
+    this.entryService.getEntries();
     this.entriesSubscription = this.entryService.getEntriesListener()
       .subscribe((entriesListReceived: Entry[]) => {
         this.entriesList = entriesListReceived;

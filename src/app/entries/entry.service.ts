@@ -12,8 +12,9 @@ export class EntryService {
 
   getEntries() {
     this.httpClient.get<{message: string, entries: Entry[]}>('http://localhost:3000/api/posts')
-      .subscribe(() => {
-
+      .subscribe((entryData) => {
+        this.entries = entryData.entries;
+        this.entriesUpdate.next([...this.entries]);
       });
   }
 
