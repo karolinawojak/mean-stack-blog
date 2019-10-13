@@ -3,6 +3,13 @@ const express = require('express');
 
 const app = express();
 
+app.use((request, response, next) => {
+  response.setHeader('Access-Control-Allow-Origin', '*');
+  response.setHeader('Access-Control-Allow-Headers',
+  'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+})
+
 app.use('/entries', (request, response, next) => {
   const entries = [
     {
