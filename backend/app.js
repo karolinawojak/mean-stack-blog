@@ -1,7 +1,19 @@
 // imports
 const express = require('express');
 
+const parser = require("body-parser");
+
 const app = express();
+
+app.use(parser.json());
+
+app.post("/api/posts", (request, response, next) => {
+  const post = request.body;
+  console.log();
+  response.status(201).json({
+    message: 'Success'
+  });
+});
 
 app.use((request, response, next) => {
   response.setHeader('Access-Control-Allow-Origin', '*');
